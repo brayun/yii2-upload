@@ -1,0 +1,22 @@
+{
+    "name": "brayun/yii2-upload",
+    "description": "aliyun oss for filesystem",
+    "type": "library",
+    "require": {
+        "xxtime/flysystem-aliyun-oss": "^1.1",
+        "creocoder/yii2-flysystem": "^0.9.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ethan",
+            "email": "ethan@brayun.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+      "psr-4": {
+          "brayun\\flysystem": "src/"
+      }
+    }
+}
