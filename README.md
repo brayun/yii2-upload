@@ -12,9 +12,25 @@
 ## 安装
 
 ```shell
-composer require brayun/yii2-mns
+composer require brayun/yii2-upload
 ```
 
 
 ## 说明
-  - sdk详细使用请[查看](https://help.aliyun.com/document_detail/51929.html)
+```
+return [
+    //...
+    'components' => [
+        //...
+        'upload' => [
+            'class' => 'brayun\flysystem\OssFilesystem',
+            'ossServer' => 'oss-cn-beijing.aliyuncs.com',
+            'ossServerInternal' => 'oss-cn-shanghai-internal.aliyuncs.com',
+            'accessKeyId' => 'your-accessKeyId',
+            'accessKeySecret' => 'your-accessKeySecret',
+            'bucket' => 'your-bucket'
+            // 'internal' => false,  // 默认外网, true内网
+        ],
+    ],
+];
+```

@@ -16,11 +16,11 @@ class OssFilesystem extends Filesystem
     /**
      * @var string
      */
-    public $ossServer;
+    public $ossServer = 'oss-cn-shanghai.aliyuncs.com';
     /**
      * @var string
      */
-    public $ossServerInternal;
+    public $ossServerInternal = 'oss-cn-shanghai-internal.aliyuncs.com';
     /**
      * @var string
      */
