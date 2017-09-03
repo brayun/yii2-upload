@@ -3,6 +3,7 @@ namespace brayun\flysystem;
 
 use creocoder\flysystem\Filesystem;
 use Xxtime\Flysystem\Aliyun\OssAdapter;
+use yii\base\InvalidConfigException;
 
 /**
  * OssFilesystem
@@ -68,7 +69,7 @@ class OssFilesystem extends Filesystem
           'access_id'     => $this->accessKeyId,
           'access_secret' => $this->accessKeySecret,
           'bucket'        => $this->bucket,
-          'endpoint'       => $this->ossServers,
+          'endpoint'       => $this->ossServer,
         ]);
     }
 }
