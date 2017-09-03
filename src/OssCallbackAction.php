@@ -30,7 +30,7 @@ class OssCallbackAction extends Action
     public function run() {
         $res = \Yii::$app->request->post();
         return $this->controller->asJson(array_merge($res, [
-            'url' => $domain.'/'.$res['filename']
+            'url' => $this->domain.'/'.$res['filename']
         ]));
     }
 
