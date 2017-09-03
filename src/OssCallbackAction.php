@@ -25,9 +25,13 @@ use yii\base\Action;
 
 class OssCallbackAction extends Action
 {
+    public $domain;
 
     public function run() {
-        return $this->controller->asJson(\Yii::$app->request->post());
+        $res = \Yii::$app->request->post();
+        return $this->controller->asJson(array_merge($res, [
+            'url' => $domain.'/'.$res['filename']
+        ]));
     }
 
 }
