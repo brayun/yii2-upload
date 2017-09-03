@@ -54,6 +54,7 @@ class OssAction extends Action
             'expire' => time() + $this->expire,
             'callback' => $this->callback(),
             'dir' => $this->dirPath,
+            'filename' => md5(uniqid(microtime(true),true))
         ]);
     }
 
