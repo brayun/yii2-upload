@@ -44,6 +44,10 @@ class OssAction extends Action
     // 过期时间 默认30秒
     public $expire = 30;
 
+    public $callbackBody = 'bucket=${bucket}&filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}&ext=${imageInfo.format}';
+
+    public $callbackType = 'application/x-www-form-urlencoded';
+
 
     public function run() {
         return $this->controller->asJson([
@@ -88,8 +92,8 @@ class OssAction extends Action
         $callback_param = [
             'callbackUrl' => $this->callbackUrl,
             'callbackHost' => parse_url($this->callbackUrl, PHP_URL_HOST),
-            'callbackBody' => 'filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}',
-            'callbackBodyType' => "application/x-www-form-urlencoded"
+            'callbackBody' => $this->callbackBody,
+            'callbackBodyType' => $this->callbackType
         ];
         return base64_encode(json_encode($callback_param));
     }
